@@ -13,7 +13,7 @@ export class ApiserviceService {
   ) { }
 
   signUp(userName: string, password: string) {
-    return this.http.post(`${environment.apiBaseUrl}/signUp`, { email: userName, password: password })
+    return this.http.post(`${environment.apiBaseUrl}/auth/signUp`, { email: userName, password: password })
   }
 
 }
