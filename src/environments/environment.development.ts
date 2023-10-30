@@ -2,5 +2,5 @@
 //     apiBaseUrl: 'localhost:5001'
 // };
 export const environment = {
-    apiBaseUrl: 'https://taskplaner-l4d79o2s6-shivarekhan.vercel.app/'
+    apiBaseUrl: 'https://taskplaner-be.vercel.app/'
 };
