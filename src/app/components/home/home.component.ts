@@ -16,7 +16,7 @@ export class HomeComponent {
   ) { }
 
   signUp() {
-    this.apiService.signUp('shivarekhan', 'Shiva@18').subscribe((data) => {
+    this.apiService.signUp('shivarekhan@gmail.com', 'Shiva@18').subscribe((data) => {
       console.log(data);
     })
   }
