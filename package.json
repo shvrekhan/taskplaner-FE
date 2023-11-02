@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "dev": "ng serve --configuration development"
+    "prebuild": "npm install && npm rebuild node-sass",
+    "dev": "node --max_old_space_size=3072 ./node_modules/@angular/cli/bin/ng serve --port 4200 -c=dev",
+    "static": "ng build -c=static"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^16.2.9",
     "@angular/router": "^16.2.9",
     "bootstrap": "^5.3.2",
+    "crypto-js": "^4.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.3"

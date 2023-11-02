@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/taskplaner-fe",
+            "outputPath": "../taskplaner-BE/src/public/.",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -47,37 +47,61 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
-            },
-            "prod": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ]
+              ],
+              "outputHashing": "all",
+              "outputPath": "dist/taskplaner-fe"
+            },
+            "dev": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "outputPath": "./dist/taskplaner"
+            },
+            "static": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "outputPath": "../taskplaner-BE/src/public/."
             }
           },
+          "outputPath": "dist/taskplaner-fe",
           "defaultConfiguration": "production"
         },
         "serve": {
@@ -86,8 +110,11 @@
             "production": {
               "browserTarget": "taskplaner-FE:build:production"
             },
-            "development": {
-              "browserTarget": "taskplaner-FE:build:development"
+            "dev": {
+              "browserTarget": "taskplaner-FE:build:dev"
+            },
+            "static": {
+              "browserTarget": "taskplaner-FE:build:static"
             }
           },
           "defaultConfiguration": "development"
