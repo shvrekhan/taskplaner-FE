@@ -4,7 +4,7 @@
             <mat-tab-group appearance="outline">
                 <mat-tab label="Sign Up">
                     <div class="container">
-                        <form [formGroup]="formGroup" (ngSubmit)="signUp()">
+                        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
                             <div class="row justify-content-center">
                                 <mat-form-field class="example-full-width col-md-10" appearance="outline"
                                     style="margin-top: 15px;">
@@ -12,11 +12,15 @@
                                     <input matInput placeholder="Email" formControlName="email">
                                 </mat-form-field>
                                 <mat-form-field class="example-full-width col-md-10" appearance="outline">
+                                    <mat-label>User Name</mat-label>
+                                    <input matInput placeholder="Email" formControlName="userName">
+                                </mat-form-field>
+                                <mat-form-field class="example-full-width col-md-10" appearance="outline">
                                     <mat-label>Password</mat-label>
                                     <input matInput placeholder="Password" formControlName="password">
                                 </mat-form-field>
                                 <div class="col-12 d-flex justify-content-center" style="margin-bottom: 15px;">
-                                    <button mat-raised-button type="submit">Submit</button>
+                                    <button mat-raised-button type="submit" [disabled]="">Submit</button>
 
                                 </div>
 
@@ -28,7 +32,7 @@
                 </mat-tab>
                 <mat-tab label="Login" appearance="outline">
                     <div class="container">
-                        <form [formGroup]="formGroup" (ngSubmit)="signUp()">
+                        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
                             <div class="row justify-content-center">
                                 <mat-form-field class="example-full-width col-md-10" appearance="outline"
                                     style="margin-top: 15px;">
