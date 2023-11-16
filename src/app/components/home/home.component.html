@@ -13,7 +13,7 @@
                                 </mat-form-field>
                                 <mat-form-field class="example-full-width col-md-10" appearance="outline">
                                     <mat-label>User Name</mat-label>
-                                    <input matInput placeholder="Email" formControlName="userName">
+                                    <input matInput placeholder="User Name" formControlName="userName">
                                 </mat-form-field>
                                 <mat-form-field class="example-full-width col-md-10" appearance="outline">
                                     <mat-label>Password</mat-label>
@@ -32,7 +32,7 @@
                 </mat-tab>
                 <mat-tab label="Login" appearance="outline">
                     <div class="container">
-                        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+                        <form [formGroup]="loginForm" (ngSubmit)="login()">
                             <div class="row justify-content-center">
                                 <mat-form-field class="example-full-width col-md-10" appearance="outline"
                                     style="margin-top: 15px;">
